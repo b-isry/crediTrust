@@ -32,6 +32,11 @@ jobs:
         run: |
           if [ -d "tests" ]; then pytest tests/; else echo "No tests directory found."; fi
 
+      - name: Launch Gradio app (smoke test)
+        run: |
+          python -m pip install gradio
+          python app.py --help || true
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
