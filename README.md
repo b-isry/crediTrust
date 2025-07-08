@@ -7,6 +7,7 @@ A Retrieval-Augmented Generation (RAG) chatbot for exploring and searching consu
 - Cleans and preprocesses consumer complaint data
 - Chunks narratives and generates embeddings using Sentence Transformers
 - Stores and indexes data in ChromaDB for fast semantic search
+- Modern Gradio UI for interactive Q&A
 - Ready for integration with chatbots or search applications
 
 ## Project Structure
@@ -19,6 +20,7 @@ creditrust-rag-chatbot/
 │   └── 01-EDA-and-Preprocessing.ipynb
 ├── src/
 │   └── vector_store_manager.py
+├── app.py
 ├── requirements.txt
 ├── README.md
 └── .github/
@@ -57,10 +59,19 @@ python src/vector_store_manager.py
 
 This will process the data, generate embeddings, and store them in the `vector_store/` directory.
 
+## Running the Gradio App
+
+To launch the chatbot UI:
+
+```powershell
+python app.py
+```
+
 ## CI/CD
 
 - Automated with GitHub Actions (`.github/workflows/ci.yml`)
-- Installs dependencies, lints code, runs tests, and includes a deploy placeholder
+- Installs dependencies, lints code, runs tests, and performs a Gradio app launch smoke test
+- Includes a deploy placeholder
 
 ## Requirements
 
